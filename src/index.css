@@ -1,3 +1,7 @@
+@font-face {
+  font-family: M;
+  src: url();
+}
 *{
   margin: 0;
   padding: 0;

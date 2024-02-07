@@ -2,6 +2,8 @@ import { Box, Button, IconButton, Input, Link, Typography, css } from '@mui/mate
 import React from 'react'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import MailForm from '../components/MailForm';
+import BackgroundImage from '../components/BackgroundImage';
+import VideoModal from '../components/VideoModal';
 
 //estilos acorde a la imagen de referencia
 //interactivilidad 
@@ -15,12 +17,7 @@ const Main = () => {
     <>
     <Box display={'flex'} 
           height={'90vh'}>
-      <Box position={'absolute'}
-           zIndex={0}
-        >
-       <img src='../../public/mainImage.png' 
-            alt='Imagen de la propiedad'/>
-     </Box>
+      <BackgroundImage/>
 
       <Box zIndex={1}
           color={'whitesmoke'}
@@ -31,12 +28,14 @@ const Main = () => {
       <Typography variant='h4'>Siéntete en casa allá donde te lleve tu trabajo</Typography>
       <Typography variant='body1'>
         Échale un vistazo al video para viajes de trabajo 
-         <IconButton aria-label='Ver video' > <ArrowRightIcon/> </IconButton>
+        <VideoModal/>
       </Typography>
       <MailForm/>
      <Typography>¿Haces viajes para tu empresa?
         <Link>Más información</Link>
-        <IconButton aria-label='Más información'> <ArrowRightIcon/> </IconButton>
+        <IconButton aria-label='Más información' sx={{
+          color: 'whitesmoke'
+         }}> <ArrowRightIcon/> </IconButton>
      </Typography>
      </Box>
     </Box>

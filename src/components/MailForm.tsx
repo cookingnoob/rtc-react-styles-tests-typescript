@@ -25,10 +25,11 @@ const MailForm = () => {
   }
 
   const handleSubmit = () => {
-    if(userInput === '') {
+    if(userInput === '' || !userInput.includes('@') && !userInput.includes('.com')) {
       setWrongInput(true)
       return
     } 
+    setWrongInput(false)
     setIsDisabled(true)
   }
 
