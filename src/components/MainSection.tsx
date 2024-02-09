@@ -1,10 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material'
 import DestinationCard from './DestinationCard'
 import destinationData from './DestinationData'
-//falta:
-    //formulario correo con modal
-    //footer
-    //cambiar la imagen a cartas
 
 const MainSection = () => {
   return (
@@ -12,25 +8,21 @@ const MainSection = () => {
         display={'flex'} 
         flexDirection={'column'} 
         justifyContent={'center'} 
-        alignItems={'center'}
-        padding={'30px'} >
-        <Typography 
-            variant='h1' 
-            marginBottom={'30px'} 
-            fontSize={'20vh'}>
-            IberiViaje</Typography>
+        alignItems={'center'} >
 
-        <Box width={'100%'} bgcolor={'pink'} marginBottom={'30px'} padding={'10px'} borderRadius={'10px'}>
+        <Box width={'100%'} bgcolor={'pink'} padding={'10px'} borderRadius={'10px'}>
             <Typography textAlign={'center'}>Nuevas fechas disponibles! abril 2024</Typography>
         </Box>
-        <Grid container gap={5} alignItems={'center'} justifyContent={'center'}>
+        <Grid container spacing={5} alignContent={'space-between'} justifyContent={'space-evenly'} padding={'30px'}>
             {destinationData.map((card, index) =>(
-                <DestinationCard 
-                    key={index}
-                    src={card.src}
-                    alt={card.alt}
-                    title={card.title}
-                    description={card.description}/>
+                <Grid item xs={4}>
+                    <DestinationCard 
+                        key={`${card.title}-${index}`}
+                        src={card.src}
+                        alt={card.alt}
+                        title={card.title}
+                        description={card.description}/>
+                </Grid>
             ))}
         </Grid>
     </Box>

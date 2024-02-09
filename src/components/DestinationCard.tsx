@@ -1,12 +1,19 @@
-import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import { Box, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
 import ReserveButton from './ReserveButton'
 
-const DestinationCard = ({src, alt ,title, description }) => {
+interface DestinationCardProps {
+  src: string;
+  alt: string;
+  title: string;
+  description:string
+}
+
+const DestinationCard: React.FC<DestinationCardProps> = ({src, alt ,title, description }) => {
   return (
-    <Card sx={{maxWidth:345}} >
+    <Card sx={{maxWidth:'500px',}} >
       <CardMedia
-      sx={{height: 140, background:'red'}} >
+      sx={{height: 200}} >
         <img src={src} 
         alt={alt} 
         style={{width: '100%', height:'100%', objectFit:'cover'}}/>
@@ -17,7 +24,7 @@ const DestinationCard = ({src, alt ,title, description }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <ReserveButton></ReserveButton>
+        <ReserveButton title={title}></ReserveButton>
       </CardActions>
     </Card>
 
