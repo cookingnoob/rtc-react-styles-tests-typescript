@@ -2,12 +2,9 @@ import { Box, Button, Input, Typography } from "@mui/material"
 import { modalStyle } from '../styles/ReserveButtonStyles'
 import { forwardRef } from 'react'
 import useSubmitForm from "../hooks/useSubmitForm"
+import { SubmitFormProps } from "../interfaces/Interfaces"
 
-interface SubmitForm {
-    title: string
-}
-
-const SubmitForm = forwardRef<HTMLDivElement,SubmitForm> (({title}, ref) => {
+const SubmitForm = forwardRef<HTMLDivElement,SubmitFormProps> (({title}, ref) => {
     const {text, emailRef, handleSubmit} = useSubmitForm()
   return (
     <Box sx={modalStyle} ref={ref}>
@@ -21,7 +18,9 @@ const SubmitForm = forwardRef<HTMLDivElement,SubmitForm> (({title}, ref) => {
         />
       <Button style={{width:'100px'}} 
               variant='contained'
-              onClick={handleSubmit}>Submit</Button>
+              onClick={handleSubmit}>
+              Submit
+      </Button>
     </Box>
   )
 })

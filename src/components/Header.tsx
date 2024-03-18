@@ -1,9 +1,10 @@
 import { Box, Typography } from "@mui/material";
+import { headerContainer, headerTypography } from "../styles/Header";
 
 const Header = () => {
   return (
-    <Box display={"flex"} justifyContent={"center"} alignContent={"center"}>
-      <Typography variant="h1" marginBottom={"30px"} fontSize={"10vw"}>
+    <Box sx={headerContainer}>
+      <Typography sx={headerTypography}>
         IberiViaje
       </Typography>
     </Box>

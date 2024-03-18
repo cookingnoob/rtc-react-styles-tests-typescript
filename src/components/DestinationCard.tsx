@@ -1,30 +1,23 @@
 import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-import React from 'react'
 import ReserveButton from './ReserveButton'
+import { DestinationCardProps } from '../interfaces/Interfaces'
+import { photoStyles } from '../styles/DestinationCard'
 
-interface DestinationCardProps {
-  src: string;
-  alt: string;
-  title: string;
-  description:string
-}
-
-const DestinationCard: React.FC<DestinationCardProps> = ({src, alt ,title, description }) => {
+const DestinationCard: React.FC<DestinationCardProps> = ({card }) => {
   return (
-    <Card sx={{minWidth: '300px', padding: '16px'}} >
+    <Card sx={{minWidth: '300px'}} >
       <CardMedia
       sx={{height: 200}} >
-        <img src={src} 
-        alt={alt} 
-        style={{width: '100%', height:'100%', objectFit:'cover'}}/>
+        <img src={card.src} 
+          alt={card.alt} 
+          style={photoStyles}/>
       </CardMedia>
       <CardContent>
-        <Typography variant='h6'>{title} </Typography>
-        <Typography variant='body1'>{description}
-        </Typography>
+        <Typography variant='h6'>{card.title} </Typography>
+        <Typography variant='body1'>{card.description}</Typography>
       </CardContent>
       <CardActions>
-        <ReserveButton title={title}></ReserveButton>
+        <ReserveButton title={card.title}></ReserveButton>
       </CardActions>
     </Card>
 

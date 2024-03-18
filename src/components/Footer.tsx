@@ -1,16 +1,9 @@
 import { Box, Typography } from '@mui/material'
-
+import { footerStyles } from '../styles/Footer'
 
 const Footer = () => {
   return (
-    <Box display={'flex'} 
-        alignContent={'center'} 
-        justifyContent={'center'} 
-        bgcolor={'pink'} 
-        height={'50px'}
-        position={'fixed'}
-        bottom={0}
-        width={'100vw'}>
+    <Box sx={footerStyles}>
         <Typography>Made by Alan Coste</Typography>
     </Box>
   )

@@ -1,33 +1,24 @@
 import { Box, Typography } from "@mui/material";
 import DestinationCard from "./DestinationCard";
 import destinationData from "../mockData/DestinationData";
+import { announcementContainer, bodyContainer, cardsContainer } from "../styles/MainSection";
 
 const MainSection = () => {
   return (
     <Box
-      display={"flex"}
-      flexDirection={"column"}
-      justifyContent={"center"}
-      alignItems={"center"}
-    >
+        sx={bodyContainer }>
       <Box
-        width={"100%"}
-        bgcolor={"pink"}
-        padding={"10px"}
-        borderRadius={"10px"}
+        sx={announcementContainer}
       >
         <Typography textAlign={"center"}>
           Nuevas fechas disponibles! abril 2024
         </Typography>
       </Box>
-      <Box >
+      <Box sx={cardsContainer}>
         {destinationData.map((card, index) => (
           <DestinationCard
             key={`${card.title}-${index}`}
-            src={card.src}
-            alt={card.alt}
-            title={card.title}
-            description={card.description}
+            card = {card}
           />
         ))}
       </Box>
