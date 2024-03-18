@@ -16,3 +16,8 @@ export interface ReserveButtonProps{
 export interface SubmitFormProps {
     title: string
 }
+
+export interface NotificationTextProps{
+  validEmail: string | null,
+  error: string | null
+}
