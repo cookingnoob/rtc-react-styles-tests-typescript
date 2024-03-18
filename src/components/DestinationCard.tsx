@@ -11,7 +11,7 @@ interface DestinationCardProps {
 
 const DestinationCard: React.FC<DestinationCardProps> = ({src, alt ,title, description }) => {
   return (
-    <Card sx={{maxWidth:'500px',}} >
+    <Card sx={{minWidth: '300px', padding: '16px'}} >
       <CardMedia
       sx={{height: 200}} >
         <img src={src} 
