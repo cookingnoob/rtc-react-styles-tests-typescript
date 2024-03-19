@@ -4,7 +4,7 @@ import { headerContainer, headerTypography } from "../styles/Header";
 const Header = () => {
   return (
     <Box sx={headerContainer}>
-      <Typography sx={headerTypography}>
+      <Typography sx={headerTypography} variant="h1">
         IberiViaje
       </Typography>
     </Box>
