@@ -1,18 +1,21 @@
-export const bodyContainer = {
-    display: "flex"
-   , flexDirection: "column",
+export const bodyContainer: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
   }
 
-export const announcementContainer = {
+export const announcementContainer: React.CSSProperties = {
     width:"100%",
-    bgcolor:"pink",
+    backgroundColor:"pink",
     padding:"10px",    
     borderRadius:"10px",
 }
 
-export const cardsContainer ={
-  bgcolor: 'red',
-
+export const cardsContainer: React.CSSProperties ={
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'space-between',
+  flexWrap: 'wrap',
+  gap:'20px'
 }

@@ -1,4 +1,4 @@
-export const headerContainer = {
+export const headerContainer: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
     alignContent: "center"
